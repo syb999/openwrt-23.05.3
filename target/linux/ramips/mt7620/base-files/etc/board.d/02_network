@@ -144,6 +144,10 @@ ramips_setup_interfaces()
 			"5:lan" "6@eth0"
 		ucidef_add_switch_attr "switch1" "enable" "false"
 		;;
+	dsbox,dsr1)
+		ucidef_add_switch "switch0" \
+			"1:lan" "2:wan" "6@eth0"
+		;;
 	edimax,br-6478ac-v2|\
 	lb-link,bl-w1200|\
 	tplink,archer-c2-v1)
@@ -332,6 +336,10 @@ ramips_setup_macs()
 	dovado,tiny-ac)
 		lan_mac=$(mtd_get_mac_ascii u-boot-env LAN_MAC_ADDR)
 		wan_mac=$(mtd_get_mac_ascii u-boot-env WAN_MAC_ADDR)
+		;;
+	dsbox,dsr1)
+		lan_mac=$(mtd_get_mac_binary factory 0x4)
+		wan_mac=$(macaddr_add "$lan_mac" -1)
 		;;
 	edimax,br-6478ac-v2)
 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x4)" 2)

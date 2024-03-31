@@ -381,6 +381,16 @@ define Device/dovado_tiny-ac
 endef
 TARGET_DEVICES += dovado_tiny-ac
 
+define Device/dsbox_dsr1
+  SOC := mt7620a
+  IMAGE_SIZE := 32448k
+  DEVICE_VENDOR := Dsbox
+  DEVICE_MODEL := DSR1
+  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb2 kmod-usb-ohci kmod-sdhci-mt7620 \
+	kmod-usb-ledtrig-usbport
+endef
+TARGET_DEVICES += dsbox_dsr1
+
 define Device/edimax_br-6478ac-v2
   SOC := mt7620a
   DEVICE_VENDOR := Edimax
