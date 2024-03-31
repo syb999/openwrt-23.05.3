@@ -196,6 +196,14 @@ detect_mac80211() {
 				;;
 		esac
 
+		ssnm="_$(cat /sys/class/ieee80211/${dev}/macaddress | sed 's/.[0-9A-Fa-f]:.[0-9A-Fa-f]:.[0-9A-Fa-f]:\(.[0-9A-Fa-f]\):\(.[0-9A-Fa-f]\):\(.[0-9A-Fa-f]\)/\1\2\3/g' | tr :[a-z] :[A-Z])"
+
+		if [ x$mode_band == x"g" ]; then
+			ssid_wlan="_2.4G"
+		else
+			ssid_wlan="_5G"
+		fi
+
 		uci -q batch <<-EOF
 			set wireless.${name}=wifi-device
 			set wireless.${name}.type=mac80211
@@ -203,14 +211,18 @@ detect_mac80211() {
 			set wireless.${name}.channel=${channel}
 			set wireless.${name}.band=${mode_band}
 			set wireless.${name}.htmode=$htmode
-			set wireless.${name}.disabled=1
+			set wireless.${name}.country=CN
+			set wireless.${name}.legacy_rates=0
+			set wireless.${name}.disabled=0
 
 			set wireless.default_${name}=wifi-iface
 			set wireless.default_${name}.device=${name}
 			set wireless.default_${name}.network=lan
 			set wireless.default_${name}.mode=ap
-			set wireless.default_${name}.ssid=OpenWrt
+			set wireless.default_${name}.ssid=OpenWrt${ssid_wlan}${ssnm}
 			set wireless.default_${name}.encryption=none
+			set wireless.default_radio${devidx}.disassoc_low_ack=0
+			set wireless.default_radio${devidx}.isolate=0
 EOF
 		uci -q commit wireless
 	done
