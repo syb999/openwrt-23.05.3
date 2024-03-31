@@ -1,0 +1,388 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Assistant for FFMPEG"
+msgstr "FFMPEG助手"
+
+msgid "Tips 1: add LOGO command\(for PC\): ffmpeg -i input.mp4 -vf \"movie=logo.png[wm];[in][wm]overlay=30:15[out]\" output.mp4"
+msgstr "提示1：添加LOGO命令（适用于PC）: ffmpeg -i input.mp4 -vf "movie=logo.png[wm];[in][wm]overlay=30:15[out]" output.mp4"
+
+msgid "Tips 2: add subtitles command\(for PC\): ffmpeg -i input.mp4 -vf subtitles=1.srt output.mp4"
+msgstr "提示2：添加字幕命令（适用于PC）: ffmpeg -i input.mp4 -vf "movie=logo.png[wm];[in][wm]overlay=30:15[out]" output.mp4"
+
+msgid "Basic Setting"
+msgstr "基本设置"
+
+msgid "Source Select"
+msgstr "选择输入源"
+
+msgid "one file"
+msgstr "单个文件"
+
+msgid "all files in the directory"
+msgstr "整个目录的文件"
+
+msgid "streaming media"
+msgstr "流媒体"
+
+msgid "microphone"
+msgstr "麦克风"
+
+msgid "About microphone"
+msgstr "关于麦克风"
+
+msgid "The same sound card needs to be selected for simultaneous acquisition and playback"
+msgstr "同时采集和播放时需要选择相同的声卡"
+
+msgid "switch to card1"
+msgstr "切换到第二张声卡"
+
+msgid "switch to card0"
+msgstr "切换到默认声卡"
+
+msgid "switch the sound card connected to the microphone"
+msgstr "切换连接到麦克风的声卡"
+
+msgid "Source File"
+msgstr "输入源文件"
+
+msgid "please input audio/video/picture file fullpath"
+msgstr "请输入音频/视频/图片文件完整路径"
+
+msgid "Source Directory"
+msgstr "输入源目录"
+
+msgid "please input directory path"
+msgstr "请输入目录路径"
+
+msgid "Streaming media url"
+msgstr "流媒体url"
+
+msgid "like rtmp,m3u8 and so on"
+msgstr "如rtmp、m3u8等"
+
+msgid "Destination Select"
+msgstr "选择输出目标"
+
+msgid "directory"
+msgstr "输出到目录"
+
+msgid "Sound Card"
+msgstr "输出到声卡"
+
+msgid "streaming media server"
+msgstr "流媒体服务器"
+
+msgid "Select stream server"
+msgstr "选择流媒体服务器"
+
+msgid "rtmp server url"
+msgstr "rtmp服务器url"
+
+msgid "icecast server url"
+msgstr "icecast服务器url"
+
+msgid "recurrently push to stream media server"
+msgstr "循环推送到流媒体服务器"
+
+msgid "Destination Directory Path"
+msgstr "输出目录路径"
+
+msgid "do not be the same as the source directory"
+msgstr "不要与输入源的目录相同"
+
+msgid "One-click Get infomation"
+msgstr "一键获取输入源信息"
+
+msgid "Audio Setting"
+msgstr "音频设置"
+
+msgid "combine audio"
+msgstr "合并音频"
+
+msgid "Mixes 2 audio inputs into a single output"
+msgstr "将2个声音频混合为一个"
+
+msgid "After merging the two stereo audio channels into single channels, mix them according to the left and right channels"
+msgstr "将2个立体声音频各自合并为单声道后，按照左右声道混音"
+
+msgid "Merge 2 single channel audio into one stereo by combining left and right channels"
+msgstr "将2个单声道音频按照左右声道合并为一个立体声"
+
+msgid "When splicing two audio tracks, add a silent track in the middle (default 5 seconds)"
+msgstr "拼接2个音频时，中间加入无声音轨(默认5秒)"
+
+msgid "Silent track duration in seconds"
+msgstr "无声音轨持续时间（秒）"
+
+msgid "Audio format"
+msgstr "音频格式"
+
+msgid "Sampling rate"
+msgstr "采样率"
+
+msgid "Audio channel"
+msgstr "音频声道"
+
+msgid "mono"
+msgstr "单声道"
+
+msgid "stereo"
+msgstr "双声道"
+
+msgid "Modify duration"
+msgstr "修改时间"
+
+msgid "do not modify"
+msgstr "不修改"
+
+msgid "specific time period"
+msgstr "特定时间段"
+
+msgid "only configure duration"
+msgstr "仅配置持续时间"
+
+msgid "cut head and tail"
+msgstr "去除片头、片尾"
+
+msgid "Start time"
+msgstr "起始时间"
+
+msgid "End time"
+msgstr "终止时间"
+
+msgid "cut head"
+msgstr "去片头时间（秒）"
+
+msgid "cut tail"
+msgstr "去片尾时间（秒）"
+
+msgid "Rising-Falling tone"
+msgstr "改变声调"
+
+msgid "sharp(44100Hz)"
+msgstr "升半音(44100Hz)"
+
+msgid "sharp(22050Hz)"
+msgstr "升半音(22050Hz)"
+
+msgid "rasing whole tone(44100Hz)"
+msgstr "升全音(44100Hz)"
+
+msgid "rasing whole tone(22050Hz)"
+msgstr "升全音(22050Hz)"
+
+msgid "flat(44100Hz)"
+msgstr "降半音(44100Hz)"
+
+msgid "flat(22050Hz)"
+msgstr "降半音(22050Hz)"
+
+msgid "falling whole tone(44100Hz)"
+msgstr "降全音(44100Hz)"
+
+msgid "falling whole tone(22050Hz)"
+msgstr "降全音(22050Hz)"
+
+msgid "increase CPU loading"
+msgstr "该功能会增加CPU负载"
+
+msgid "Speed governing"
+msgstr "速率调整（倍速）"
+
+msgid "Volume"
+msgstr "音量调节"
+
+msgid "about title"
+msgstr "标题相关"
+
+msgid "set title"
+msgstr "文件名设置为标题"
+
+msgid "replace filename with title"
+msgstr "用标题替换文件名"
+
+msgid "Fast copy"
+msgstr "快速复制"
+
+msgid "Setup ready"
+msgstr "设置完毕"
+
+msgid "Save/apply first please"
+msgstr "请先保存/应用"
+
+msgid "Video Setting"
+msgstr "视频设置"
+
+msgid "Video format"
+msgstr "视频格式"
+
+msgid "adjust the playback speed"
+msgstr "调整播放速度"
+
+msgid "speed list"
+msgstr "速度列表"
+
+msgid "speed up by two times"
+msgstr "加速两倍(减少播放时间)"
+
+msgid "reduce the speed by two times"
+msgstr "减速两倍(延长播放时间)"
+
+msgid "reduce the speed by three times"
+msgstr "减速三倍(延长播放时间)"
+
+msgid "using libx264/libx265"
+msgstr "使用libx264/libx265转码(可以解决某些mp4视频无法在浏览器播放的问题)"
+
+msgid "image effects"
+msgstr "开启图像特效"
+
+msgid "increase CPU loading when open"
+msgstr "打开时增加CPU负载"
+
+msgid "flip image horizontally"
+msgstr "水平翻转视频图像"
+
+msgid "flip image up and down"
+msgstr "上下翻转视频图像"
+
+msgid "image rotation 90 degrees"
+msgstr "图像旋转90度"
+
+msgid "image horizontal symmetrical"
+msgstr "图像水平对称"
+
+msgid "image vertically symmetrical"
+msgstr "图像垂直对称"
+
+msgid "fuzzy processing"
+msgstr "图像模糊处理"
+
+msgid "crisp enhancement"
+msgstr "图像清晰增强"
+
+msgid "a half of screensize"
+msgstr "变为原屏幕大小的一半"
+
+msgid "screen clipping"
+msgstr "屏幕剪辑"
+
+msgid "capture the screen of the specified size and location"
+msgstr "获取指定大小和位置的屏幕"
+
+msgid "default set is capture 100% width and 50% heigh from the topleft (0,100) pixel"
+msgstr "默认设置为从左上角（0,100）像素捕获100%宽度和50%高度的画面"
+
+msgid "Mute"
+msgstr "静音"
+
+msgid "Save to picture"
+msgstr "导出为图片"
+
+msgid "Set the number of frames"
+msgstr "设置帧数"
+
+msgid "The number of frames"
+msgstr "每秒取几帧"
+
+msgid "black-and-white"
+msgstr "输出为黑白色"
+
+msgid "screen merge"
+msgstr "视频融合"
+
+msgid "only modification duration is supported"
+msgstr "仅支持修改持续时间"
+
+msgid "enable merge"
+msgstr "启用融合"
+
+msgid "left and right"
+msgstr "左侧和右侧"
+
+msgid "top and bottom"
+msgstr "顶部和底部"
+
+msgid "overlay in the middle"
+msgstr "中间覆盖"
+
+msgid "one by one"
+msgstr "一个接一个"
+
+msgid "merge video and audio"
+msgstr "合并视频和音频"
+
+msgid "merge video to picture"
+msgstr "将视频合并到图片"
+
+msgid "one video and one picture"
+msgstr "一个视频和一张图片"
+
+msgid "two videos and one picture"
+msgstr "两个视频和一张图片"
+
+msgid "The picture file to be merged"
+msgstr "要合并的图片文件"
+
+msgid "modify the screen resolution of input1 video"
+msgstr "修改input1视频的屏幕分辨率"
+
+msgid "800:-1 means: width 800, height adaptive correction"
+msgstr "800:-1表示: 宽度800，高度自适应修正"
+
+msgid "vertex coordinates of superimposed input1 video"
+msgstr "叠加输入1视频的顶点坐标"
+
+msgid "100:0 means:the pixel at coordinates 100,0"
+msgstr "100:0表示：坐标100,0处的像素"
+
+msgid "vertex coordinates of superimposed input2 video"
+msgstr "叠加输入2视频的顶点坐标"
+
+msgid "120:20 means:the pixel at coordinates 120,20"
+msgstr "120:0表示：坐标120,0处的像素"
+
+
+msgid "The first file to be merged"
+msgstr "要合并的第一个文件"
+
+msgid "The second file to be merged"
+msgstr "要合并的第二个文件"
+
+msgid "modify the screen resolution of input2 video"
+msgstr "修改input2视频的屏幕分辨率"
+
+msgid "320:-1 means: width 320, height adaptive correction"
+msgstr "320:-1表示: 宽度320，高度自适应修正"
+
+msgid "vertex coordinates of superimposed video"
+msgstr "叠加视频的顶点坐标"
+
+msgid "20:20 means:the pixel at coordinates 20,20"
+msgstr "20:20表示：坐标20,20处的像素"
+
+msgid "picture to video"
+msgstr "图片转视频"
+
+msgid "only one picture"
+msgstr "单张照片转换成单个视频"
+
+msgid "multiple pictures"
+msgstr "多张照片转换成单个视频"
+
+msgid "picture path"
+msgstr "图片路径"
+
+msgid "picture resolution"
+msgstr "图像分辨率"
+
+msgid "One-click Convert/Play/Push/Output Audio"
+msgstr "一键转换/播放/推送/导出音频"
+
+msgid "One-click Convert/Play/Push/Output Video"
+msgstr "一键转换/播放/推送/导出视频"
+
+msgid "One-click STOP"
+msgstr "一键停止"
+
