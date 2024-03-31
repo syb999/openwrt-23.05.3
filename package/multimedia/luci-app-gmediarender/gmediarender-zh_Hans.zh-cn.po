@@ -1,0 +1,53 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "gmediarender server"
+msgstr "gmediarender服务器"
+
+msgid "Binding interface list"
+msgstr "绑定接口列表"
+
+msgid "Other interface"
+msgstr "其他接口"
+
+msgid "Please type interface name"
+msgstr "请输入接口名称"
+
+msgid "gmediarender friendly-name suffix"
+msgstr "gmediarender友好名称后缀"
+
+msgid "Action"
+msgstr "行动"
+
+msgid "One-click initialize gmediarender"
+msgstr "一键初始化gmediarender"
+
+msgid "Wanna download while Playing"
+msgstr "开启边播边下"
+
+msgid "Please type log file's name"
+msgstr "请输入日志文件名"
+
+msgid "One-click download while Playing"
+msgstr "一键启动-投屏时自动下载"
+
+msgid "Support v.qq.com,iqiyi.com,bilibili.com,youku.com,music..."
+msgstr "支持腾讯、爱奇艺、哔哩哔哩、优酷、西瓜、酷我、酷狗、网易云等"
+
+msgid "One-click STOP download"
+msgstr "停止自动下载"
+
+msgid "One-click flv to mp4"
+msgstr "flv格式一键转换成mp4"
+
+msgid "One-click ts to mp4"
+msgstr "ts格式一键转换成mp4"
+
+msgid "One-click m4a to mp3"
+msgstr "m4a格式一键转换成mp3"
+
+msgid "ffmpeg needs to be installed(only for bilibili)"
+msgstr "需要安装ffmpeg（哔哩哔哩专用）"
+
+
+

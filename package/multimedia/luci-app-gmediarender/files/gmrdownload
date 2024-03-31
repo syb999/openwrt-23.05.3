@@ -1,0 +1,54 @@
+#!/bin/sh
+. /usr/share/gmediarender/gmrloadfunc
+thecase=$1
+
+if [ "$thecase" == "iqiyi" ];then
+	gmr_init
+	gmr_iqiyiinit
+	echo "clear" > $gmrlog
+	gmr_dirinit
+	gmr_iqiyidownload
+elif [ "$thecase" == "qq.com" ];then
+	gmr_init
+	gmr_avqqinit
+	echo "clear" > $gmrlog
+	gmr_dirinit
+	gmr_avqqdownload
+elif [ "$thecase" == "bilivideo" ];then
+	gmr_init
+	gmr_bilibiliinit
+	echo "clear" > $gmrlog
+	gmr_dirinit
+	gmr_bilibilidownload
+elif [ "$thecase" == "youku" ];then
+	gmr_init
+	gmr_youkuinit
+	echo "clear" > $gmrlog
+	gmr_dirinit
+	gmr_youkudownload
+elif [ "$thecase" == "bdxiguavod" ];then
+	gmr_init
+	gmr_xiguainit
+	echo "clear" > $gmrlog
+	gmr_dirinit
+	gmr_xiguadownload
+elif [ "$thecase" == "hifuntv.com" ];then
+	gmr_init
+	gmr_mangotvinit
+	echo "clear" > $gmrlog
+	gmr_dirinit
+	gmr_mangotvdownload
+elif [ "$thecase" == "xiaoniangao" ];then
+	gmr_init
+	gmr_xiaoniangaoinit
+	echo "clear" > $gmrlog
+	gmr_dirinit
+	gmr_xiaoniangaodownload
+else
+	gmr_init
+	gmr_musicinit
+	echo "clear" > $gmrlog
+	gmr_dirinit
+	gmr_musicdownload
+fi
+

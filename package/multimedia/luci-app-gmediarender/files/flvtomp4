@@ -1,0 +1,28 @@
+#!/bin/sh
+
+gmrdir="$(uci get gmediarender.@gmediarender[0].gmrenderdir)"
+
+testffmpeg=$(opkg list-installed | grep ffmpeg)
+
+if [ ! "$testffmpeg" ];then
+	echo "No ffmpeg. Stop script."
+else
+	cd $gmrdir/bilibili
+
+	num=1
+	for f in $(ls *.flv | sort);do 
+		mp4ffmpeg=$(echo $f | sed "s/\.flv//")
+		if [ "$num" -le 9 ];then
+			nnum="00$num"
+		elif [ "$num" -le 99 ];then
+			nnum="0$num"
+		else
+			nnum="$num"
+		fi
+		fname="${nnum}_${mp4ffmpeg}"
+		ffmpeg -v quiet -i "$f" -max_muxing_queue_size 2048 -vcodec copy "$fname.mp4"
+		num=$(expr $num + 1)
+	done
+
+	rm *.flv
+fi
