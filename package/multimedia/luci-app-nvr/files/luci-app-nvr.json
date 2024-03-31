@@ -1,0 +1,12 @@
+{
+        "luci-app-nvr": {
+                "description": "Grant access to LuCI app nvr",
+		"read": {
+			"uci": [ "nvr" ]
+		},
+		"write": {
+			"uci": [ "nvr" ]
+		}
+	}
+}
+
