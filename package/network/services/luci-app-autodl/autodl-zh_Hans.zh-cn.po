@@ -1,0 +1,311 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Assistant for automatic download"
+msgstr "自动下载助手"
+
+msgid "Basic Setting for Audio"
+msgstr "音频基本设置"
+
+msgid "Basic Setting for docin"
+msgstr "豆丁网基本设置"
+
+msgid "Download Audio from https://www.ximalaya.com"
+msgstr "喜马拉雅音频下载页面"
+
+msgid "Download from https://www.docin.com"
+msgstr "豆丁网下载页面"
+
+msgid "Download directory"
+msgstr "下载目录"
+
+msgid "Please enter a valid directory"
+msgstr "请输入有效的目录"
+
+msgid "Sync download address (save & app after sync)"
+msgstr "同步下载地址(同步后先保存&应用)"
+
+msgid "One-click download"
+msgstr "一键下载"
+
+msgid "Total number of video files"
+msgstr "该节目的总集数"
+
+msgid "Please enter a valid number"
+msgstr "请输入有效的集数"
+
+msgid "One-click ts to mp4"
+msgstr "一键转换成MP4"
+
+msgid "ffmpeg needs to be installed"
+msgstr "需要已安装好ffmpeg"
+
+msgid "Audios URL"
+msgstr "音频节目URL"
+
+msgid "URL for downloading https://www.ximalaya.com Audios"
+msgstr "喜马拉雅音频节目的URL页面地址"
+
+msgid "The starting page number"
+msgstr "起始页码"
+
+msgid "Audios URL multi pages"
+msgstr "启用下载音频节目URL多页功能"
+
+msgid "Need to download multiple pages of resources"
+msgstr "需要下载多页资源"
+
+msgid "Number of pages to download"
+msgstr "要下载的页数"
+
+msgid "Audios Name"
+msgstr "音频节目名"
+
+msgid "Audios from https://www.ximalaya.com"
+msgstr "喜马拉雅的音频节目"
+
+msgid "Wanna get VIP audios"
+msgstr "想要获取VIP音频"
+
+msgid "You must have VIP accout"
+msgstr "你必须有VIP账户"
+
+msgid "The value with Account Cookie name: 1＆_token"
+msgstr "帐户Cookie名称为1＆_token的值"
+
+msgid "Using The Cookie of VIP account to get VIP audios"
+msgstr "使用VIP账号Cookie获取VIP音频"
+
+msgid "Set delay time"
+msgstr "设置下载的延迟时间(默认0秒)"
+
+msgid "Please enter a lastest number"
+msgstr "最新的节目集数"
+
+msgid "Usually one URL contains 30 new resources"
+msgstr "通常一个URL包含30个新的音频资源"
+
+msgid "Download Audios directory"
+msgstr "音频下载目录"
+
+msgid "Audios download"
+msgstr "音频下载"
+
+msgid "Get list"
+msgstr "获取节目表"
+
+msgid "Show current audio list"
+msgstr "开启当前节目列表"
+
+msgid "Select Audio number"
+msgstr "指定集数"
+
+msgid "Get list first"
+msgstr "需要先获取节目表"
+
+msgid "Select Audio"
+msgstr "选择音频"
+
+msgid "Wanna get www.ishuyin.com audios"
+msgstr "开启下载 www.ishuyin.com 音频功能"
+
+msgid "Wanna get https://www.kugou.com/ts/ audios"
+msgstr "开启下载 酷狗音乐听书 音频功能"
+
+msgid "Download Audios numbers"
+msgstr "下载音频集数"
+
+msgid "Please enter the total number"
+msgstr "请输入该节目的总节目数"
+
+msgid "One-click download freeVIP"
+msgstr "一键下载新品限免节目或VIP节目"
+
+msgid "node needs to be installed"
+msgstr "需要已安装好node"
+
+msgid "One-click m4a to mp3"
+msgstr "一键m4a转mp3"
+
+msgid "Audio playback menu"
+msgstr "音频播放菜单"
+
+msgid "One-click discard gst-play-1.0"
+msgstr "一键弃用gst-play-1.0"
+
+msgid "Not suitable for MIPS routers"
+msgstr "不适合mips路由器(cpu负载高)"
+
+msgid "One-click reuse gst-play-1.0"
+msgstr "一键再次使用gst-play-1.0"
+
+msgid "One-click Play mp3"
+msgstr "一键播放mp3节目"
+
+msgid "One-click Play selected mp3(m4a aac)"
+msgstr "一键播放被选择的mp3文件(m4a aac)"
+
+msgid "One-click Play mp3(Positive)"
+msgstr "一键播放当前mp3节目(正序)"
+
+msgid "One-click Play mp3(Reverse)"
+msgstr "一键播放当前mp3节目(倒序)"
+
+msgid "USB sound card is needed and gst-play-1.0 or mpg123 package has been installed"
+msgstr "需要USB声卡，并已安装gst-play-1.0(额外支持m4a和aac格式)或者mpg123软件包"
+
+msgid "Play Next mp3"
+msgstr "播放下一首mp3"
+
+msgid "Stop play mp3"
+msgstr "停止播放mp3"
+
+msgid "Volume Up"
+msgstr "调高音量"
+
+msgid "Volume Down"
+msgstr "调低音量"
+
+msgid "Use the second sound card"
+msgstr "使用第二块声卡"
+
+msgid "Use default sound card"
+msgstr "使用默认声卡"
+
+msgid "www.ishuyin.com One-click download"
+msgstr "一键下载ishuyin.com"
+
+msgid "Audios download from https://www.ishuyin.com"
+msgstr "下载ishuyin.com音频"
+
+msgid "https://www.kugou.com/ts/ One-click download"
+msgstr "一键下载-酷狗音乐听书音频"
+
+msgid "Audios download from https://www.kugou.com/ts/"
+msgstr "下载酷狗音乐听书音频"
+
+msgid "alsa-utils needs to be installed"
+msgstr "需要已安装好alsa-utils"
+
+msgid "One-click download documents"
+msgstr "一键下载文档(图片格式)"
+
+msgid "One-click convert to TXT"
+msgstr "一键转换为文本"
+
+msgid "docin.com documents convert to TXT(depends imagemagick & tesseract)"
+msgstr "docin.com文档转换为文本(需要已安装好imagemagick和tesseract)"
+
+msgid "docin.com documents download"
+msgstr "豆丁网文档下载"
+
+msgid "docin.com doc URL"
+msgstr "豆丁网文档URL"
+
+msgid "Document total pages"
+msgstr "该文档总页数"
+
+msgid "Document Name"
+msgstr "文档名称"
+
+msgid "Download documents directory"
+msgstr "文档下载目录"
+
+msgid "Documents from https://docin.com"
+msgstr "获取自豆丁网的文档"
+
+msgid "URL for downloading https://docin.com documents"
+msgstr "豆丁网文档的URL页面地址"
+
+msgid "URL for downloading https://www.kugou.com/ts/ Audios"
+msgstr "酷狗音乐听书的URL页面地址"
+
+msgid "Network radio"
+msgstr "网络电台"
+
+msgid "Select radio URL"
+msgstr "选择电台链接"
+
+msgid "PLAY"
+msgstr "播放"
+
+msgid "STOP"
+msgstr "停止"
+
+msgid "Network Music"
+msgstr "网络音乐"
+
+msgid "Music list"
+msgstr "音乐列表"
+
+msgid "Next Song"
+msgstr "下一首歌"
+
+msgid "manual download"
+msgstr "手动下载"
+
+msgid "automatic download while playing"
+msgstr "播放时自动下载"
+
+msgid "9ku"
+msgstr "九酷网"
+
+msgid "kugou"
+msgstr "酷狗音乐"
+
+msgid "9ku top 500"
+msgstr "歌曲500首"
+
+msgid "9ku net music"
+msgstr "网络歌曲"
+
+msgid "9ku old music"
+msgstr "经典老歌"
+
+msgid "9ku english music"
+msgstr "英文歌曲"
+
+msgid "9ku movie music"
+msgstr "电影歌曲"
+
+msgid "9ku ktv music"
+msgstr "KTV歌曲"
+
+msgid "Download current music"
+msgstr "下载当前歌曲"
+
+msgid "Download mode"
+msgstr "下载模式"
+
+msgid "hummingbird pop music chart"
+msgstr "蜂鸟流行音乐排行榜"
+
+msgid "tiktok hot song chart"
+msgstr "抖音热歌榜"
+
+msgid "kwai hot song chart"
+msgstr "快手热歌榜"
+
+msgid "western golden melody chart"
+msgstr "欧美金曲榜"
+
+msgid "kugou top500"
+msgstr "酷狗TOP500"
+
+msgid "acg new song chart"
+msgstr "ACG新歌榜"
+
+msgid "mainland song chart"
+msgstr "内地歌曲榜"
+
+msgid "hongkong song chart"
+msgstr "香港歌曲榜"
+
+msgid "japanese song chart"
+msgstr "日语歌曲榜"
+
+msgid "billboard chart"
+msgstr "美国BillBoard榜"
+
+msgid "Background Music of Event"
+msgstr "活动背景音乐"

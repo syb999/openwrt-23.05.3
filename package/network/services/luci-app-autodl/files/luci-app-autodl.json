@@ -1,0 +1,12 @@
+{
+        "luci-app-autodl": {
+                "description": "Grant access to LuCI app autodl",
+		"read": {
+			"uci": [ "autodl" ]
+		},
+		"write": {
+			"uci": [ "autodl" ]
+		}
+	}
+}
+
