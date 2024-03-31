@@ -1970,6 +1970,17 @@ define Device/nokia_a-040w-q
 endef
 TARGET_DEVICES += nokia_a-040w-q
 
+define Device/oem_business-router
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := OEM
+  DEVICE_MODEL := Business-Router
+  DEVICE_PACKAGES := -wpad-basic-mbedtls -iwinfo \
+	-uboot-envtools
+endef
+TARGET_DEVICES += oem_business-router
+
 define Device/oraybox_x3a
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
