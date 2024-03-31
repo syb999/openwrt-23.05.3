@@ -1,0 +1,55 @@
+--- a/lib/netdev.c
++++ b/lib/netdev.c
+@@ -71,7 +71,6 @@
+ #include <fcntl.h>
+ #include <arpa/inet.h>
+ #include <inttypes.h>
+-#include <linux/if_tun.h>
+ #include <linux/if_packet.h>
+ 
+ 
+@@ -95,10 +94,6 @@
+ #define s64 __s64
+ #endif
+ 
+-#include <linux/ethtool.h>
+-#include <linux/rtnetlink.h>
+-#include <linux/sockios.h>
+-#include <linux/version.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+@@ -110,6 +105,11 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
++#include <linux/ethtool.h>
++#include <linux/rtnetlink.h>
++#include <linux/sockios.h>
++#include <linux/version.h>
++#include <linux/if_tun.h>
+ 
+ #include "fatal-signal.h"
+ #include "list.h"
+--- a/udatapath/action_set.c
++++ b/udatapath/action_set.c
+@@ -179,7 +179,7 @@ action_set_write_actions(struct action_s
+     for (i=0; i<actions_num; i++) {
+         action_set_write_action(set, actions[i]);
+     }
+-    VLOG_DBG_RL(LOG_MODULE, &rl, action_set_to_string(set));
++    VLOG_DBG_RL(LOG_MODULE, &rl, "%s", action_set_to_string(set));
+ }
+ 
+ void
+--- a/udatapath/dp_buffers.c
++++ b/udatapath/dp_buffers.c
+@@ -64,6 +64,8 @@ static struct vlog_rate_limit rl = VLOG_
+ 
+ #define OVERWRITE_SECS  1
+ 
++#define PATH_MAX 4096
++
+ struct packet_buffer {
+     struct packet *pkt;
+     uint32_t       cookie;
