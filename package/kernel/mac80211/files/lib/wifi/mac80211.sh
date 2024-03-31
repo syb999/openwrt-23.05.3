@@ -198,7 +198,7 @@ detect_mac80211() {
 
 		ssnm="_$(cat /sys/class/ieee80211/${dev}/macaddress | sed 's/.[0-9A-Fa-f]:.[0-9A-Fa-f]:.[0-9A-Fa-f]:\(.[0-9A-Fa-f]\):\(.[0-9A-Fa-f]\):\(.[0-9A-Fa-f]\)/\1\2\3/g' | tr :[a-z] :[A-Z])"
 
-		if [ x$mode_band == x"g" ]; then
+		if [ x$mode_band == x"2g" ]; then
 			ssid_wlan="_2.4G"
 		else
 			ssid_wlan="_5G"
@@ -221,8 +221,8 @@ detect_mac80211() {
 			set wireless.default_${name}.mode=ap
 			set wireless.default_${name}.ssid=OpenWrt${ssid_wlan}${ssnm}
 			set wireless.default_${name}.encryption=none
-			set wireless.default_radio${devidx}.disassoc_low_ack=0
-			set wireless.default_radio${devidx}.isolate=0
+			set wireless.default_${name}.disassoc_low_ack=0
+			set wireless.default_${name}.isolate=0
 EOF
 		uci -q commit wireless
 	done
