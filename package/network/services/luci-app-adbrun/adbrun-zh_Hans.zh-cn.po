@@ -1,0 +1,267 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "ADB server"
+msgstr "ADB服务器"
+
+msgid "Assistant for automatic control android devices."
+msgstr "android设备自动控制助手"
+
+msgid "refresh all preview pics"
+msgstr "刷新所有预览图片"
+
+msgid "init devices"
+msgstr "设备初始化"
+
+msgid "One-click disable hotplug"
+msgstr "一键禁用USB热插拔"
+
+msgid "Suitable for connecting to openwrt through USB cable for a long time"
+msgstr "适用于通过USB电缆长时间连接openwrt"
+
+msgid "One-click resume hotplug"
+msgstr "一键恢复热插拔"
+
+msgid "After hot plug is enabled, you can continue to initialize the device using USB cable"
+msgstr "启用热插拔后，您可以继续使用USB电缆初始化设备"
+
+msgid "init setting"
+msgstr "初始化设置"
+
+msgid "d11event diantao init setting"
+msgstr "双11活动-点淘设置"
+
+msgid "diantao init setting"
+msgstr "点淘设置"
+
+msgid "d11event-diantao daytime worklist"
+msgstr "双11元宝狂欢节-点淘白天挂机列表(0:00~19:59)"
+
+msgid "d11event-diantao night worklist"
+msgstr "双11元宝狂欢节-点淘晚上8点后挂机列表(20:00~23:59)"
+
+msgid "d11event-diantao lucky worklist"
+msgstr "双11元宝狂欢节-点淘幸运大抽奖挂机列表"
+
+msgid "diantao daytime worklist"
+msgstr "点淘-打工赚体力-白天挂机列表(0:00~19:59)"
+
+msgid "diantao night worklist"
+msgstr "点淘-打工赚体力-晚上8点后挂机列表(20:00~23:59)"
+
+msgid "photo init setting"
+msgstr "照片设置"
+
+msgid "Photos directory"
+msgstr "照片下载目录"
+
+msgid "One-click initialize devices"
+msgstr "一键初始化设备"
+
+msgid "Please use USB cable to connect openwrt router and Android device(multi devices support)"
+msgstr "请使用USB电缆连接openwrt路由器和安卓设备(支持多设备)"
+
+msgid "Basic setting"
+msgstr "基本设置"
+
+msgid "IP address"
+msgstr "IP地址"
+
+msgid "Command list"
+msgstr "命令列表"
+
+msgid "adbrun command list"
+msgstr "adbrun命令列表"
+
+msgid "get input event"
+msgstr "获取点击屏幕的event(录制点击屏幕前，请先获取)"
+
+msgid "record tap"
+msgstr "录制点击屏幕动作"
+
+msgid "crazy tap"
+msgstr "疯狂点击屏幕(运行录制好的动作)"
+
+msgid "recording duration"
+msgstr "录制动作持续时间"
+
+msgid "looping times"
+msgstr "循环已录制动作次数"
+
+msgid "in seconds"
+msgstr "以秒为单位"
+
+msgid "update preview picture"
+msgstr "更新预览图片"
+
+msgid "push and install apk"
+msgstr "上传并安装apk"
+
+msgid "entry bootloader mode"
+msgstr "重启进入bootloader模式"
+
+msgid "entry recovery mode"
+msgstr "重启进入recovery模式"
+
+msgid "entry fastboot mode"
+msgstr "重启进入fastboot模式"
+
+msgid "reboot"
+msgstr "重启设备"
+
+msgid "poweroff"
+msgstr "关机"
+
+msgid "auto-install ADBKeyboard"
+msgstr "自动安装ADBKeyboard"
+
+msgid "input chinese"
+msgstr "输入中文"
+
+msgid "menu key"
+msgstr "菜单键"
+
+msgid "home key"
+msgstr "HOME键"
+
+msgid "return key"
+msgstr "返回键"
+
+msgid "Allow installation of apps from unknown sources"
+msgstr "设置允许安装未知来源应用"
+
+msgid "input text"
+msgstr "输入文本"
+
+msgid "please install ADBKeyboard.apk first"
+msgstr "请先安装好ADBKeyboard.apk"
+
+msgid "Turn off/on the screen"
+msgstr "关闭/打开屏幕"
+
+msgid "Turn on screen"
+msgstr "点亮屏幕"
+
+msgid "Increase screen brightness"
+msgstr "增加屏幕亮度"
+
+msgid "Reduce screen brightness"
+msgstr "降低屏幕亮度"
+
+msgid "Play or stop"
+msgstr "播放/暂停"
+
+msgid "Play the next"
+msgstr "播放下一首"
+
+msgid "Play the previous"
+msgstr "播放上一首"
+
+msgid "Resume playback"
+msgstr "恢复播放"
+
+msgid "Pause playback"
+msgstr "暂停播放"
+
+msgid "Mute on/off"
+msgstr "静音 开/关"
+
+msgid "Run camera"
+msgstr "开启摄像头"
+
+msgid "Take a picture"
+msgstr "拍摄照片"
+
+msgid "Screen record 30s"
+msgstr "屏幕录像30秒"
+
+msgid "Push screen record to openwrt"
+msgstr "下载屏幕录像到openwrt照片下载目录"
+
+msgid "Get running APP"
+msgstr "获取运行中的应用程序"
+
+msgid "Run Wechat"
+msgstr "打开微信"
+
+msgid "Run QQ"
+msgstr "打开QQ"
+
+msgid "Run taobao"
+msgstr "打开淘宝"
+
+msgid "Run taobao lite version"
+msgstr "打开淘宝极速版"
+
+msgid "Run taobao live"
+msgstr "打开点淘"
+
+msgid "Run JD lite version"
+msgstr "打开京东极速版"
+
+msgid "Run fanqie xiaoshuo"
+msgstr "打开番茄小说"
+
+msgid "Run ximalaya lite version"
+msgstr "打开喜马拉雅极速版"
+
+msgid "Automatically take photos"
+msgstr "自动拍照脚本"
+
+msgid "Automatically push screenshot to openwrt"
+msgstr "自动将屏幕截图推送到openwrt照片下载目录"
+
+msgid "Automatically get gold coins from ximalaya lite version"
+msgstr "自动获取金币脚本-喜马拉雅极速版"
+
+msgid "Automatically read book"
+msgstr "自动获取金币脚本-番茄小说"
+
+msgid "Automatically play kuaishou"
+msgstr "自动获取金币脚本-快手视频"
+
+msgid "Automatically diantaolive"
+msgstr "自动获取金币脚本-点淘直播"
+
+msgid "Automatically taobao live"
+msgstr "自动获取金币脚本-点淘任务"
+
+msgid "Automatically jdlite"
+msgstr "自动获取金币脚本-京东极速版任务"
+
+msgid "Automatically taobao baba farm"
+msgstr "自动淘宝芭芭农场任务"
+
+msgid "apk path"
+msgstr "apk路径"
+
+msgid "push to /sdcard directory"
+msgstr "推送到/sdcard目录"
+
+msgid "Automatically 11.11 taobao live"
+msgstr "自动获取金币脚本-双11活动-点淘-赚元宝升级(白天或晚上8点后)"
+
+msgid "Automatically 11.11 taobao live lucky event"
+msgstr "自动获取金币脚本-双11活动-点淘-幸运大抽奖"
+
+msgid "Automatically 11.11 taobao zhongcaoji"
+msgstr "自动获取金币脚本-双11活动-淘宝-天猫双11种草机"
+
+msgid "Automatically 11.11 taobao miaotang event"
+msgstr "自动获取金币脚本-双11活动-淘宝-天猫双11做任务赚喵糖"
+
+msgid "Automatically 11.11 taobao miaotang event-touzi"
+msgstr "自动获取金币脚本-双11活动-淘宝-天猫双11做任务赚喵糖-自动点骰子"
+
+msgid "Disconnect the current client"
+msgstr "一键断开当前客户端"
+
+msgid "Connect the current client"
+msgstr "一键连接当前客户端"
+
+msgid "Play"
+msgstr "启动命令或脚本"
+
+msgid "Stop loop script"
+msgstr "立即终止循环脚本"
+

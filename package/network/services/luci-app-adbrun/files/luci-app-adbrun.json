@@ -1,0 +1,12 @@
+{
+        "luci-app-adbrun": {
+                "description": "Grant access to LuCI app adbrun",
+		"read": {
+			"uci": [ "adbrun" ]
+		},
+		"write": {
+			"uci": [ "adbrun" ]
+		}
+	}
+}
+

@@ -1,0 +1,24 @@
+#!/bin/sh
+starttime=
+dosedbasex=
+dosedbasey=
+dosedbasecx=
+dosedbasecy=
+
+sectionname=$(echo $0 | cut -d '/' -f 3 | cut -d '_' -f 1 | sed 's/^ADBRUN//')
+adbclient=$(uci get adbrun.$sectionname.adbiplist)
+rm /tmp/adb_ADBRUN${sectionname}_.sh
+
+while true
+do
+	rtime=$(expr $(date +%s | cut -c 10) + 1)
+	rx=$(expr $basex + $rtime)
+	ry=$(expr $basey + $rtime)
+	sleep $(echo `expr $rtime + 20`)
+	adb -s ${adbclient}:5555 shell input tap $basecx $basecy
+	sleep $(expr $rtime + 10)
+	adb -s ${adbclient}:5555 shell input swipe ${rx} ${ry} $(expr ${rx} + 10) $(expr ${ry} - 390)
+	adb -s ${adbclient}:5555 shell input tap $basecx $basecy
+	sleep $(expr $rtime + 30)
+done
+

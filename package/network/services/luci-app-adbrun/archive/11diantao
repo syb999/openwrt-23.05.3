@@ -1,0 +1,28 @@
+#!/bin/sh
+. /usr/adbrun/worklist
+#自行进入双11元宝狂欢节页面-并点击赚元宝升级-白天+晚上
+
+dosedxstart=
+dosedystart=
+dosedbasex=
+dosedbasey=
+
+sectionname=$(echo $0 | cut -d '/' -f 3 | cut -d '_' -f 1 | sed 's/^ADBRUN//')
+adbclient=$(uci get adbrun.$sectionname.adbiplist)
+rm /tmp/adb_ADBRUN${sectionname}_.sh
+
+adb disconnect ${adbclient}:5555
+sleep 2
+adb connect ${adbclient}:5555
+sleep 2
+
+gettimenow=$(date "+%H")
+
+if [ $gettimenow -lt 20 -a $gettimenow -ge 0 ];then
+	worklist=$(uci get adbrun.@adbinit[0].diantaodayworklistd11)
+	botting
+else
+	worklist=$(uci get adbrun.@adbinit[0].diantaonightworklistd11)
+	botting
+fi
+rm /tmp/worklist${sectionname}.adbtmp
