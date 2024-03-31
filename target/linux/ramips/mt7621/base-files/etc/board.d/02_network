@@ -324,6 +324,10 @@ ramips_setup_macs()
 	yuncore,ax820)
 		label_mac=$(mtd_get_mac_binary Factory 0x4)
 		;;
+	zte,e8820s)
+		lan_mac=$(mtd_get_mac_binary factory 57344)
+		wan_mac=$(macaddr_add "$lan_mac" -1)
+		;;
 	esac
 
 	[ -n "$lan_mac" ] && ucidef_set_interface_macaddr "lan" $lan_mac

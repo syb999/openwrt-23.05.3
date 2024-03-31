@@ -3001,6 +3001,19 @@ define Device/zio_freezio
 endef
 TARGET_DEVICES += zio_freezio
 
+define Device/zte_e8820s
+  $(Device/nand)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 120320k
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
+	check-size
+  DEVICE_VENDOR := ZTE
+  DEVICE_MODEL := E8820S
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 -uboot-envtools
+endef
+TARGET_DEVICES += zte_e8820s
+
 define Device/zyxel_lte3301-plus
   $(Device/nand)
   DEVICE_VENDOR := ZyXEL
