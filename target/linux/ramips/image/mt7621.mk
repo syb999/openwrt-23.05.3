@@ -2183,6 +2183,16 @@ define Device/thunder_timecloud
 endef
 TARGET_DEVICES += thunder_timecloud
 
+define Device/todaair_in1251y
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := TodaAir
+  DEVICE_MODEL := IN1251Y
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7663-firmware-ap kmod-mt7663-firmware-sta
+endef
+TARGET_DEVICES += todaair_in1251y
+
 define Device/totolink_a7000r
   $(Device/dsa-migration)
   IMAGE_SIZE := 16064k

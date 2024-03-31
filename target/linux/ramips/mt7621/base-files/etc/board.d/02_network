@@ -120,6 +120,9 @@ ramips_setup_interfaces()
 	oem,business-router)
 		ucidef_set_interfaces_lan_wan "eth1 eth2 eth3 eth4" "eth0"
 		;;
+	todaair,in1251y)
+		ucidef_set_interfaces_lan_wan "lan1" "wan"
+		;;
 	tozed,zlt-s12-pro)
 		ucidef_set_interface_lan "lan1 lan2 lan3 wan"
 		ucidef_set_interface "wwan" device "/dev/ttyUSB0" protocol "ncm"
@@ -289,6 +292,11 @@ ramips_setup_macs()
 	mikrotik,ltap-2hnd)
 		label_mac=$(cat "/sys/firmware/mikrotik/hard_config/mac_base")
 		lan_mac=$label_mac
+		;;
+	todaair,in1251y)
+		label_mac=$(mtd_get_mac_binary factory 4)
+		lan_mac=$(macaddr_add "$label_mac" -1)
+		wan_mac=$(macaddr_add "$label_mac" -2)
 		;;
 	tplink,er605-v2)
 		CI_UBIPART="firmware"

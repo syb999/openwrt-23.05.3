@@ -191,6 +191,10 @@ oraybox,x3a)
 snr,snr-cpe-me1)
 	ucidef_set_led_usbport "usb" "USB" "green:usb" "usb1-port1" "usb2-port1"
 	;;
+todaair,in1251y)
+	ucidef_set_led_wlan "wifi" "WiFi" "amber:wifi" "phy0tpt"
+	ucidef_set_led_netdev "lan" "LAN" "amber:lan" "br-lan"
+	;;
 tplink,archer-a6-v3|\
 tplink,archer-ax23-v1|\
 tplink,archer-c6-v3|\
