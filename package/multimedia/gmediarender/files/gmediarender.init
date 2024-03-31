@@ -1,0 +1,54 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008-2012 OpenWrt.org
+
+START=99
+USE_PROCD=1
+
+APP=gmediarender
+hostname="$(uci get system.@system[0].hostname)"
+dlnaname="$(uci get gmediarender.@gmediarender[0].gmrendersuffix)"
+havelog="$(uci get gmediarender.@gmediarender[0].gmrenderextra)"
+
+function gmrconftest(){
+	gmrdir="$(uci get gmediarender.@gmediarender[0].gmrenderdir)"
+	if [ ! -d "$gmrdir" ]; then
+		mkdir -p $gmrdir
+	fi
+	gmrlog="$(uci get gmediarender.@gmediarender[0].gmrenderlog)"
+}
+
+if [ $(uci get gmediarender.@gmediarender[0].gmrenderbindiflist) = lan ];then
+	bindif="br-lan"
+elif [ $(uci get gmediarender.@gmediarender[0].gmrenderbindiflist) = wan ];then
+	bindif=$(uci get network.wan.ifname)
+elif [ $(uci get gmediarender.@gmediarender[0].gmrenderbindiflist) = other ];then
+	bindif=$(uci get gmediarender.@gmediarender[0].gmrenderotherif)
+fi
+
+start_service() {
+	procd_open_instance
+
+	if [ ! -n "${bindif}" ];then
+		if [ ! -n "${havelog}" ];then
+			procd_set_param command /usr/bin/$APP -f ${APP}-${hostname}-${dlnaname}
+		else
+			gmrconftest
+			procd_set_param command /usr/bin/$APP -f ${APP}-${hostname}-${dlnaname} --logfile /tmp/${gmrlog}
+		fi
+	else
+		if [ ! -n "${havelog}" ];then
+			procd_set_param command /usr/bin/$APP -f ${APP}-${hostname}-${dlnaname} -I ${bindif}
+		else
+			gmrconftest
+			procd_set_param command /usr/bin/$APP -f ${APP}-${hostname}-${dlnaname} -I ${bindif} --logfile /tmp/${gmrlog}
+		fi
+	fi
+
+	procd_set_param respawn
+	procd_close_instance
+}
+
+stop_service() {
+	service_stop /usr/bin/$APP
+}
+
