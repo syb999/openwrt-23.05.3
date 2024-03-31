@@ -68,6 +68,7 @@ ramips_setup_interfaces()
 	asiarf,ap7621-nv1|\
 	beeline,smartbox-flash|\
 	beeline,smartbox-giga|\
+	c-life,xg1|\
 	glinet,gl-mt1300|\
 	iptime,a3002mesh|\
 	jcg,q20|\
@@ -217,6 +218,11 @@ ramips_setup_macs()
 		label_mac=$(mtd_get_mac_ascii config2 factory_mac)
 		wan_mac=$(macaddr_add "$label_mac" 3)
 		lan_mac=$label_mac
+		;;
+	c-life,xg1)
+		label_mac=$(cat /sys/class/net/eth0/address)
+		lan_mac=$(macaddr_add "$label_mac" -2)
+		wan_mac=$(macaddr_add "$label_mac" -3)
 		;;
 	dlink,dir-860l-b1)
 		lan_mac=$(mtd_get_mac_ascii factory lanmac)
