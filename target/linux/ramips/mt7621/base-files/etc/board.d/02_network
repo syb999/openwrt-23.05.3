@@ -310,6 +310,11 @@ ramips_setup_macs()
 		wan_mac=$(macaddr_add "$lan_mac" 1)
 		label_mac=$lan_mac
 		;;
+	nokia,a-040w-q)
+		eth0_mac=$(cat /sys/class/net/eth0/address)
+		lan_mac=$(macaddr_add "$eth0_mac" -1)
+		wan_mac=$(macaddr_add "$eth0_mac" -2)
+		;;
 	yuncore,ax820)
 		label_mac=$(mtd_get_mac_binary Factory 0x4)
 		;;

@@ -1944,6 +1944,19 @@ define Device/netis_wf2881
 endef
 TARGET_DEVICES += netis_wf2881
 
+define Device/nokia_a-040w-q
+  $(Device/nand)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 120320k
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
+	check-size
+  DEVICE_VENDOR := Nokia
+  DEVICE_MODEL := A-040W-Q
+  DEVICE_PACKAGES := kmod-mt7615-firmware kmod-usb3 -uboot-envtools
+endef
+TARGET_DEVICES += nokia_a-040w-q
+
 define Device/oraybox_x3a
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
