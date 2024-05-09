@@ -825,7 +825,7 @@ $(eval $(call BuildAsterisk13Module,format-h263,H263 format,support for H264 for
 $(eval $(call BuildAsterisk13Module,format-h264,H264 format,support for H264 format,,,format_h264,,))
 $(eval $(call BuildAsterisk13Module,format-ilbc,ILBC format,support for ILBC format,,,format_ilbc,,))
 $(eval $(call BuildAsterisk13Module,format-jpeg,JPEG image format,JPEG file format,,,format_jpeg,,))
-$(eval $(call BuildAsterisk13Module,format-mp3,MP3 format,support for MP3 format,@BROKEN,,format_mp3,,)) # requires patched mpg123 source
+$(eval $(call BuildAsterisk13Module,format-mp3,MP3 format,support for MP3 format,,,format_mp3,,)) # requires patched mpg123 source
 $(eval $(call BuildAsterisk13Module,format-ogg-vorbis,OGG/Vorbis audio,OGG/Vorbis streams,+libvorbis,,format_ogg_vorbis,,))
 $(eval $(call BuildAsterisk13Module,format-pcm,PCM format,support for PCM format,,,format_pcm,,))
 $(eval $(call BuildAsterisk13Module,format-siren14,Siren14,ITU G.722.1 Annex C Siren14 48kbps-only format,,,format_siren14,,))
