@@ -8,6 +8,9 @@ ath79_setup_interfaces()
 	local board="$1"
 
 	case "$board" in
+	100msh,hq65)
+		ucidef_set_interfaces_lan_wan "eth1" "eth0"
+		;;
 	adtran,bsap1800-v2|\
 	adtran,bsap1840|\
 	allnet,all-wap02860ac|\
