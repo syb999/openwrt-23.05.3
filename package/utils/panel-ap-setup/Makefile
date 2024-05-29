@@ -23,6 +23,14 @@ define Package/panel-ap-setup/install
 	$(INSTALL_BIN) ./files/init.d/panel_ap-init $(1)/etc/init.d/panel_ap-init
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_CONF) ./files/panel_ap_config $(1)/etc/config/panel_ap_config
+ifdef CONFIG_TARGET_ramips_mt7628_WNA4320V2
+	$(INSTALL_DIR) $(1)/etc/rc.button
+	$(INSTALL_BIN) ./files/button/wna4320v2 $(1)/etc/rc.button/wps
+endif
+ifdef CONFIG_TARGET_ath79_generic_DEVICE_100msh_hq65
+	$(INSTALL_DIR) $(1)/etc/rc.button
+	$(INSTALL_BIN) ./files/button/100msh $(1)/etc/rc.button/BTN_1
+endif
 endef
 
 $(eval $(call BuildPackage,panel-ap-setup))

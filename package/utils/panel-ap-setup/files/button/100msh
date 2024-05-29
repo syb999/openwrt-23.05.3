@@ -1,0 +1,17 @@
+#!/bin/sh
+
+[ "${ACTION}" = "released" ] || exit 0
+
+if [ $(cat /sys/devices/platform/leds/leds/red:status/brightness) = 1 ];then
+        # tune off leds
+        echo 0 > /sys/devices/platform/leds/leds/red:status/brightness
+        echo 0 > /sys/devices/platform/leds/leds/green:wan/brightness
+        echo 0 > /sys/devices/platform/leds/leds/green:wlan/brightness
+else
+        # tune on leds
+        echo 1 > /sys/devices/platform/leds/leds/red:status/brightness
+        echo 1 > /sys/devices/platform/leds/leds/green:wan/brightness
+        echo 1 > /sys/devices/platform/leds/leds/green:wlan/brightness
+fi
+
+return 0
