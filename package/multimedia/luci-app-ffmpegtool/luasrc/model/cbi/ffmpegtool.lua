@@ -121,6 +121,56 @@ audio_format:value("wav")
 audio_format.default = "mp3"
 audio_format.rempty  = false
 
+audio_sept=s:taboption("audio_setting", Flag, "audio_separate", translate("separate audio"))
+audio_sept.default = ""
+
+audio_sept_silence=s:taboption("audio_setting", Flag, "audio_sept_silence", translate("separate audio by silencedetect"))
+audio_sept_silence:depends( "audio_separate", "" )
+audio_sept_silence = ""
+
+audio_sept_silence_input = s:taboption("audio_setting", Value, "audio_sept_silence_input", translate("the original file to be separated"))
+audio_sept_silence_input:depends( "audio_sept_silence", "1" )
+audio_sept_silence_input.datatype = "string"
+audio_sept_silence_input.placeholder = "/mnt/sda1/input.mp3"
+audio_sept_silence_input.default = "/mnt/sda1/input.mp3"
+audio_sept_silence_input.rmempty = true
+
+audio_sept_silence_threshold = s:taboption("audio_setting", Value, "audio_sept_silence_threshold", translate("threshold level"))
+audio_sept_silence_threshold:depends( "audio_sept_silence", "1" )
+audio_sept_silence_threshold.datatype = "string"
+audio_sept_silence_threshold.placeholder = "-45dB"
+audio_sept_silence_threshold.default = "-45dB"
+audio_sept_silence_threshold.rmempty = true
+
+audio_sept_silence_duration = s:taboption("audio_setting", Value, "audio_sept_silence_duration", translate("silence duration"))
+audio_sept_silence_duration:depends( "audio_sept_silence", "1" )
+audio_sept_silence_duration.datatype = "string"
+audio_sept_silence_duration.placeholder = "2.5"
+audio_sept_silence_duration.default = "2.5"
+audio_sept_silence_duration.rmempty = true
+
+audio_sept_input = s:taboption("audio_setting", Value, "audio_sept_input", translate("the original file to be separated"))
+audio_sept_input:depends( "audio_separate", "1" )
+audio_sept_input.datatype = "string"
+audio_sept_input.placeholder = "/mnt/sda1/input.mp3"
+audio_sept_input.default = "/mnt/sda1/input.mp3"
+audio_sept_input.rmempty = true
+
+audio_sept_segment = s:taboption("audio_setting", Value, "audio_sept_segment", translate("segment duration"))
+audio_sept_segment:depends( "audio_separate", "1" )
+audio_sept_segment.datatype = "string"
+audio_sept_segment.placeholder = "5:01,3:02,6:03"
+audio_sept_segment.default = ""
+audio_sept_segment.rmempty = true
+audio_sept_segment.description = translate("Please enter the duration of each segmented audio in sequence")
+
+audio_sept_timespinner = s:taboption("audio_setting", Value, "audio_sept_timespinner", translate("timespinner"))
+audio_sept_timespinner:depends( "audio_separate", "1" )
+audio_sept_timespinner.datatype = "uinteger"
+audio_sept_timespinner.placeholder = "0"
+audio_sept_timespinner.default = "0"
+audio_sept_timespinner.rmempty = true
+
 audio_merge=s:taboption("audio_setting", Flag, "audio_merge", translate("combine audio"))
 audio_merge:depends( "audio_copy", "" )
 audio_merge.default = ""
@@ -243,8 +293,11 @@ volume=s:taboption("audio_setting", ListValue, "volume", translate("Volume"))
 volume.placeholder = "none"
 volume:value("none")
 volume:value("standard")
+volume:value("+15dB")
+volume:value("+10dB")
 volume:value("+5dB")
 volume:value("-5dB")
+volume:value("-10dB")
 volume:value("0.2")
 volume:value("0.5")
 volume:value("1.5")

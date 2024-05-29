@@ -65,10 +65,16 @@ fi
 if [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" != "none" ];then
 	if [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" == "standard" ];then
 		param_volume="loudnorm=i=-14:tp=0.0"
+	elif [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" == "+15dB" ];then
+		param_volume="volume=15dB"
+	elif [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" == "+10dB" ];then
+		param_volume="volume=10dB"
 	elif [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" == "+5dB" ];then
 		param_volume="volume=5dB"
 	elif [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" == "-5dB" ];then
 		param_volume="volume=-5dB"
+	elif [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" == "-10dB" ];then
+		param_volume="volume=-10dB"
 	elif [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" == "0.2" ];then
 		param_volume="volume=0.2"
 	elif [ "$(uci get ffmpegtool.@ffmpegtool[0].volume)" == "0.5" ];then
@@ -86,6 +92,78 @@ fi
 
 if [ "$(uci get ffmpegtool.@ffmpegtool[0].audio_copy)" == "1" ];then
 	param_copy="-acodec copy"
+fi
+
+if [ "$(uci get ffmpegtool.@ffmpegtool[0].audio_sept_silence)" == "1" ];then
+	input_file="$(uci get ffmpegtool.@ffmpegtool[0].audio_sept_silence_input)"
+	THRESHOLD="$(uci get ffmpegtool.@ffmpegtool[0].audio_sept_silence_threshold)"
+	SILENCE_DURATION="$(uci get ffmpegtool.@ffmpegtool[0].audio_sept_silence_duration)"
+	start_time=0
+	end_time=0
+	durations=0
+	output_file_prefix=0
+	ffmpeg -i "$input_file" -af "silencedetect=n=$THRESHOLD:d=$SILENCE_DURATION" -f null - 2>&1 |
+	while read line; do
+	    if [[ "$line" == *[Ss]ilence_end* ]]; then
+	        start_time=$end_time
+	        end_time=$(echo "$line" | cut -d '|' -f1 | cut -d ':' -f2 | cut -d '.' -f1 )
+		if [ $end_time -lt $start_time ];then
+			end_time=$start_time
+		fi
+	        durations=$(expr $end_time - $start_time)
+	        if [ ! -z $(uci get ffmpegtool.@ffmpegtool[0].dest_directory_path) ];then
+	    		output_file="$(uci get ffmpegtool.@ffmpegtool[0].dest_directory_path)/${output_file_prefix}.output_sept.$param_format" 
+	        else
+	    		output_file="$(dirname $input_file)/${output_file_prefix}.output_sept.$param_format"    
+	        fi
+	        echo "${input_file}文件分割处理中...，输出:$(basename ${output_file})" >> /tmp/ffmpeg.log
+	        ffmpeg -loglevel quiet -i "$input_file" -ss $start_time $param_rate $param_channel $audios_param $param_title $param_copy -t $durations "$output_file" -y
+		ffmpeg -loglevel error -i "$output_file" -c copy -f null /dev/null
+		if [ $? -ne 1 ]; then
+		        output_file_prefix=$(expr $output_file_prefix + 1)
+		fi
+	    fi
+	done
+	echo "分割完毕!" >> /tmp/ffmpeg.log
+	ucidefault
+	exit 0
+fi
+
+if [ "$(uci get ffmpegtool.@ffmpegtool[0].audio_separate)" == "1" ];then
+	input_file="$(uci get ffmpegtool.@ffmpegtool[0].audio_sept_input)"
+	start_time=0
+	durations=0
+	timespinner=$(uci get ffmpegtool.@ffmpegtool[0].audio_sept_timespinner)
+	output_file_prefix=1
+	segments=$(uci get ffmpegtool.@ffmpegtool[0].audio_sept_segment | sed 's/,/ /g')
+	for i in ${segments};do
+	    start_time="$(expr ${start_time} + ${durations})"
+	    if [ $(echo ${i} | tr -cd ':' | wc -c) -eq 2 ];then
+	    	hourtomin=$(expr $(echo ${i} | cut -d ':' -f1) \* 60)
+	    	mintosec=$(expr $(expr ${hourtomin} + $(echo ${i} | cut -d ':' -f2)) \* 60)
+	    	durations=$(expr $(echo ${i} | cut -d ':' -f3) + ${mintosec} + ${timespinner})
+	    elif [ $(echo ${i} | tr -cd ':' | wc -c) -eq 1 ];then
+	    	mintosec=$(expr $(echo ${i} | cut -d ':' -f1) \* 60)
+	    	durations=$(expr $(echo ${i} | cut -d ':' -f2) + ${mintosec} + ${timespinner})
+	    else
+	    	durations=$(expr ${i} + ${timespinner})
+	    fi
+	    if [ ! -z $(uci get ffmpegtool.@ffmpegtool[0].dest_directory_path) ];then
+	    	output_file="$(uci get ffmpegtool.@ffmpegtool[0].dest_directory_path)/${output_file_prefix}.output_sept.$param_format" 
+	    else
+	    	output_file="$(dirname $input_file)/${output_file_prefix}.output_sept.$param_format"    
+	    fi
+	    echo "${input_file}文件分割处理中...，输出:$(basename ${output_file})" >> /tmp/ffmpeg.log
+	    if [ $(echo "${input_file##*.}") = $param_format ];then
+	    	ffmpeg -i "$input_file" -ss ${start_time} -t $durations -c copy "$output_file" -y
+	    else
+	    	ffmpeg -i "$input_file" -ss ${start_time} -t $durations "$output_file" -y
+	    fi
+	    output_file_prefix=$(expr $output_file_prefix + 1)
+	done 
+	echo "分割完毕!" >> /tmp/ffmpeg.log
+	ucidefault
+	exit 0
 fi
 
 if [ "$(uci get ffmpegtool.@ffmpegtool[0].audio_merge)" == "1" ];then
@@ -174,7 +252,12 @@ elif [ "$(uci get ffmpegtool.@ffmpegtool[0].src_select)" == "all files in the di
 		if [ "$(uci get ffmpegtool.@ffmpegtool[0].audio_titleisname)" == "1" ];then
 			ffmpeg $param_starttime $param_endtime -i "$(uci get ffmpegtool.@ffmpegtool[0].src_directory_path)/$i" $param_rate $param_channel $audios_param $param_copy "$(uci get ffmpegtool.@ffmpegtool[0].dest_directory_path)/$param_title.$param_format" -y
 		else
-			ffmpeg $param_starttime $param_endtime -i "$(uci get ffmpegtool.@ffmpegtool[0].src_directory_path)/$i" $param_rate $param_channel $audios_param $param_title $param_copy "$(uci get ffmpegtool.@ffmpegtool[0].dest_directory_path)/$(echo $i | cut -d '.' -f1).$param_format" -y
+			if [ $(uci get ffmpegtool.@ffmpegtool[0].src_directory_path) = $(uci get ffmpegtool.@ffmpegtool[0].dest_directory_path) ];then
+				output_name=$(echo $i | cut -d '.' -f1)
+			else
+				output_name=${i%.*}
+			fi
+			ffmpeg $param_starttime $param_endtime -i "$(uci get ffmpegtool.@ffmpegtool[0].src_directory_path)/$i" $param_rate $param_channel $audios_param $param_title $param_copy "$(uci get ffmpegtool.@ffmpegtool[0].dest_directory_path)/${output_name}.$param_format" -y
 		fi
 		echo "转换完成!" >> /tmp/ffmpeg.log
 	done
